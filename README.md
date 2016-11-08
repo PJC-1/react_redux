@@ -15,3 +15,11 @@
 3.  The dispach calls the reducer with the current state object and the action as parameters.
 4.  The reducer checks the type of the action and, depending on the action type and any other properties this action has, creates a new state object.
 5.  The store applies the new state to all components.
+
+
+##  Some notes the lessons are going through:
+1.  The first principle of Redux is that everything that changes in your application, including the data and the UI state, is contained in a `single object`, we call the `state` or the `state tree`.
+2.  The second principle of Redux is that the `state tree is read only`. You cannot modify or write to it. Instead, anytime you want to change the state, you need to dispach an action.
+3.  An `action` is a plain JavaScript object describing the change. The example in the counting app they, the dispatching action is `type: "INCREMENT"` and `"DECREMENT"`.
+4.  Understanding the difference between the `pure` and `impure` functions is an important distinction because some of the function that you're going to write in Redux have to be pure, and you need to be mindful of that.
+5.  The `pure` functions are the functions whose returned value depends solely on the values of their arguments. Pure functions do not have any observable side effects, such as network or database calls. The pure functions just calculate the new value. You can be confident that if you call the pure function with the same set of arguments, you're going to get the same returned value. They are predictable. Also, pure functions do not modify the values passed to them. In the example they used they had a `squareAll` function that accepts an array, this function does not overwrite the `items` inside this array. Instead, it returns a new array by using `items.map`.
